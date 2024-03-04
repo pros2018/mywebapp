@@ -1,0 +1,9 @@
+mywebapp.py
+setup.py
+mywebapp.egg-info/PKG-INFO
+mywebapp.egg-info/SOURCES.txt
+mywebapp.egg-info/dependency_links.txt
+mywebapp.egg-info/namespace_packages.txt
+mywebapp.egg-info/requires.txt
+mywebapp.egg-info/top_level.txt
+mywebapp.egg-info/zip-safe

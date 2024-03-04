@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mywebapp_tests.TestMyWebApp-20240304235132" tests="1" file="mywebapp_tests.py" time="0.029" timestamp="2024-03-04T23:51:34" failures="0" errors="0" skipped="0">
+	<testcase classname="mywebapp_tests.TestMyWebApp" name="test_hello_route" time="0.029" timestamp="2024-03-04T23:51:34"/>
+</testsuite>
