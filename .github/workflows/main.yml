@@ -57,4 +57,4 @@ jobs:
         uses: sonarsource/sonarqube-scan-action@v1
         with:
           entryPoint: scanner
-          args: -Dsonar.projectKey=mywebapp -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_3a5a5f66e6fca53fa5b1b0b980fb1b73aa2dfbb9
+          args: -Dsonar.projectKey=mywebapp -Dsonar.sources=. -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
