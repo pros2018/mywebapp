@@ -16,7 +16,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Python
+      - name: Set up Python and Node.js
         uses: actions/setup-python@v2
         with:
           python-version: 3.12
@@ -39,6 +39,12 @@ jobs:
       - name: List Files  # Optional step
         run: |
           ls -R
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-web-app
+          path: src
+        
   
   sonarqube_analysis:
     name: SonarCloud
