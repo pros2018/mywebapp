@@ -73,6 +73,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
 
       - name: Build and push Docker image
+        working-directory: src/main/python
         run: |
           docker build -t pros2018/mywebapp:latest .
           docker push pros2018/mywebapp:latest
