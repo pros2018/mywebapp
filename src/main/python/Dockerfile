@@ -7,8 +7,12 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Install any needed dependencies specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Set up a virtual environment
+RUN python -m venv venv
+RUN /bin/bash -c "source venv/bin/activate"
+
+# Install Flask
+RUN pip install --no-cache-dir Flask
 
 # Expose port 7001 to the outside world
 EXPOSE 7001
