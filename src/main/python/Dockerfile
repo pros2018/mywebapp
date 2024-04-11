@@ -16,4 +16,4 @@ RUN python -m venv venv && \
 EXPOSE 7001
 
 # Run the Flask application using the Python interpreter
-CMD ["venv/bin/python", "app.py"]
+CMD ["venv/bin/python", "mywebapp.py"]
