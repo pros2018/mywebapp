@@ -45,7 +45,6 @@ jobs:
           name: my-web-app
           path: src
         
-  
   sonarqube_analysis:
     name: SonarCloud
     runs-on: ubuntu-latest
@@ -58,6 +57,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         env: 
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  
 
   deploy:
       runs-on: ubuntu-latest
