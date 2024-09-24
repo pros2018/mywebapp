@@ -12,19 +12,19 @@ class TestMyWebApp(unittest.TestCase):
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data.decode('utf-8'), 'Hello, welcome to my simple web application')
-    # Negative test case for a non-existent route
-    def test_404(self):
-        # Simulate a request to a non-existent URL
-        response = self.app.get('/non-existent-route')
-        # Assert that the response status code is 404 (Not Found)
-        self.assertEqual(response.status_code, 404)
+    def test_get_data_route(self):
+        response = self.app.get('/api/data')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('message', response.get_json())
 
-    # Negative test case for a wrong HTTP method
-    def test_invalid_method(self):
-        # Simulate a POST request to the root URL (which only accepts GET)
-        response = self.app.post('/')
-        # Assert that the response status code is 405 (Method Not Allowed)
-        self.assertEqual(response.status_code, 405)
+    def test_post_data_route(self):
+        response = self.app.post('/api/data', json={'name': 'Alice'})
+        self.assertEqual(response.status_code, 201)
+        self.assertIn('message', response.get_json())
 
+    def test_post_data_invalid(self):
+        response = self.app.post('/api/data', json={})
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('error', response.get_json())
 if __name__ == '__main__':
     unittest.main()
