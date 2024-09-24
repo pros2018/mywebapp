@@ -1,5 +1,5 @@
 # Use the official Python image as a base image
-FROM python:3.10
+FROM python:3.13
 
 # Set the working directory in the container
 WORKDIR /app
@@ -13,7 +13,7 @@ RUN python -m venv venv && \
     pip install --no-cache-dir Flask
 
 # Expose port 7001 to the outside world
-EXPOSE 7001
+EXPOSE 7002
 
 # Run the Flask application using the Python interpreter
 CMD ["venv/bin/python", "mywebapp.py"]

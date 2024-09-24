@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python and Node.js
         uses: actions/setup-python@v2
         with:
-          python-version: 3.12
+          python-version: 3.13
           node-version: '20'
            
       - name: Install PyBuilder
@@ -36,7 +36,7 @@ jobs:
           name: test-results
           path: target/reports  
 
-      - name: List Files  # Optional step
+      - name: List Files  # Optional steps
         run: |
           ls -R
       - name: Upload artifact
