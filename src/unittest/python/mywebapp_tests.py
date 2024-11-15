@@ -13,7 +13,7 @@ class TestMyWebApp(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data.decode('utf-8'), 'Hello, welcome to my simple web application')
     def test_get_data_route(self):
-        response = self.app.get('/api/data')
+        response = self.app.get('/api/data/')
         self.assertEqual(response.status_code, 200)
         self.assertIn('message', response.get_json())
 
